@@ -1,18 +1,23 @@
 public class Ejercicio6 {
     public static void main(String[] args) {
-        int numeros = 4618;
-        String numero = String.valueOf(numeros);
-        int suma = 0;
+        int n = 4628;
+
+        if (esHyperpar(n))
+            System.out.println("Es hyperpar");
+        else
+            System.out.println("No es hyperpar");
+    }
+
+    public static boolean esHyperpar(int n) {
+        String numero = String.valueOf(n);
+        int digito;
         boolean es = true;
-        for  (int i = 0; i < numero.length(); i++) {
-            if (!(numero.charAt(i) % 2 == 0)) {
-                es = false;
-                break;
-            } else {
-                suma += numero.charAt(i);
-                System.out.println(suma);
+        for (int i = 0; i < numero.length(); i++) {
+            digito = numero.charAt(i);
+            if (digito % 2 != 0) {
+                return false;
             }
         }
-
+        return es;
     }
 }

@@ -4,7 +4,7 @@ public class Ejercicio4 {
     public static void main(String[] args) {
         int numeros[] = {1,2,3,5,7,6,2,2,0,9,8};
 
-        System.out.println(moda(numeros));
+        System.out.println("La moda es "+moda(numeros));
 
     }
     public static int moda(int[] numeros) {
@@ -19,7 +19,8 @@ public class Ejercicio4 {
                 if (numeros[i] == numeros[j]) {
                     contador++;
                 }
-            } if  (contador > maximorepetidos){
+            }
+            if  (contador > maximorepetidos){
                 maximorepetidos = contador;
                 moda = numeros[i];
             }
