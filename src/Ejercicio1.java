@@ -1,24 +1,32 @@
 public class Ejercicio1 {
     public static void main(String[] args) {
-        int[] n = new int[] {8,7,6,9,5,1,7};
-        String numero = String.valueOf(n);
-        int digito;
-        boolean creciente = false;
-        boolean decreciente = false;
+        int[] n = {5, 5, 6 ,7 , 8, 9};
+        System.out.println(orden(n));
 
-        for (int i = 0; i < n.length - 1; i++) {
-            digito = numero.charAt(i);
-            if (n[i] < n[i + 1]) {
-                creciente = true;
-            }else if (n[i] > n[i + 1]) {
-                decreciente = true;
-            }
-
-        }
         // ascendente   descendente
         //     true         false -> ascendente
         //     false        true -> descendente
         //     true         true -> desordenado
         //                       -> iguales
+    }
+    public static String orden(int[] num) {
+        boolean ascendente = false;
+        boolean descendente = false;
+        for (int i = 0; i < num.length - 1; i++) {
+            if (num[i] < num[i + 1]) {
+                ascendente = true;
+            }else if (num[i] > num[i + 1]) {
+                descendente = true;
+            }
+        }
+        if (ascendente && descendente) {
+            return "Desordenado";
+        }else if (ascendente) {
+            return "Ascendente";
+        }else if (descendente) {
+            return  "Descendente";
+        }else{
+            return "Iguales";
+        }
     }
 }
